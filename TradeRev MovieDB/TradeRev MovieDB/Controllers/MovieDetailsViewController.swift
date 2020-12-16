@@ -43,27 +43,34 @@ class MovieDetailsViewController: UIViewController {
     }
     
     private func setViewModelListeners() {
-        viewModel.name.bind { (name) in
+        viewModel.name.bind { [weak self] (name) in
+            guard let self = self else { return }
             self.titleLabel.text = name
         }
-        viewModel.image.bind { (image) in
+        viewModel.image.bind { [weak self] (image) in
+            guard let self = self else { return }
             if let url = URL(string: image) {
                 self.posterImageView.load(url: url, placeholder: nil)
             }
         }
-        viewModel.releaseDate.bind { (releaseDate) in
+        viewModel.releaseDate.bind { [weak self]  (releaseDate) in
+            guard let self = self else { return }
             self.releaseDateLabel.text = releaseDate
         }
-        viewModel.rating.bind { (rating) in
+        viewModel.rating.bind { [weak self] (rating) in
+            guard let self = self else { return }
             self.ratingLabel.text = "\(rating)"
         }
-        viewModel.description.bind { (desc) in
+        viewModel.description.bind { [weak self] (desc) in
+            guard let self = self else { return }
             self.descriptionLabel.text = desc
         }
-        viewModel.notes.bind { (notes) in
+        viewModel.notes.bind { [weak self] (notes) in
+            guard let self = self else { return }
             self.notesLabel.text = notes
         }
-        viewModel.recommendedMovies.bind { (movies) in
+        viewModel.recommendedMovies.bind { [weak self] (movies) in
+            guard let self = self else { return }
             self.recommendedMovies = movies
             self.recommendedCollectionView.reloadData()
         }

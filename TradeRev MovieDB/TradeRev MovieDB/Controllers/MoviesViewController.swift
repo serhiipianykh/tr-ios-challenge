@@ -10,6 +10,7 @@ import UIKit
 class MoviesViewController: UIViewController {
     
     @IBOutlet weak var moviesCollectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     private var refreshControl: UIRefreshControl!
     
     private let viewModel = MoviesViewModel()
@@ -36,10 +37,36 @@ class MoviesViewController: UIViewController {
             self.moviesCollectionView.refreshControl?.endRefreshing()
             self.moviesCollectionView.reloadData()
         }
+        
+        self.viewModel.pageState.bind { [weak self] (state) in
+            guard let self = self else { return }
+            self.updateUIForState(state)
+        }
     }
     
     @objc private func refreshMovies() {
         self.viewModel.getMovies()
+    }
+    
+    private func updateUIForState(_ state: PageState) {
+        switch state {
+        case let .failed(error):
+            self.activityIndicator.isHidden = true
+            self.moviesCollectionView.isHidden = false
+            let message = error?.localizedDescription ?? "Failed to load the resource."
+            self.showAlert(title: "Error", message: message)
+            break
+        case .loaded:
+            self.activityIndicator.isHidden = true
+            self.moviesCollectionView.isHidden = false
+            break
+        case .loading:
+            if movies.isEmpty {
+                self.moviesCollectionView.isHidden = true
+                self.activityIndicator.isHidden = false
+            }
+            break
+        }
     }
 }
 
