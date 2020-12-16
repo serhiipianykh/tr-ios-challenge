@@ -9,12 +9,6 @@ import XCTest
 @testable import TradeRev_MovieDB
 
 class TradeRev_MovieDBTests: XCTestCase {
-    
-    private static let dateFormatter: DateFormatter = {
-        var formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter
-    }()
 
     var jsonMovieData: Data!
     var movie: Movie!
@@ -74,11 +68,10 @@ class TradeRev_MovieDBTests: XCTestCase {
     }
     
     func testDecodeReleaseDate() throws {
-        XCTAssertEqual(movieDetails.releaseDate, 940000898)
+        XCTAssertEqual(movieDetails.releaseDateTimestamp, 940000898)
     }
     
     func testDecodeReleaseDateConvert() throws {
-        let dateString = Self.dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(movieDetails.releaseDate)))
-        XCTAssertEqual(dateString, "1999-10-15")
+        XCTAssertEqual(movieDetails.releaseDate, "1999-10-15")
     }
 }
