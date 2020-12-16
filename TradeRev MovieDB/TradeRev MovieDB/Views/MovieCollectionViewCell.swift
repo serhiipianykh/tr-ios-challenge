@@ -23,6 +23,9 @@ class MovieCollectionViewCell: UICollectionViewCell {
     func configureCellWith(_ movie: Movie) {
         titleLabel.text = movie.name
         yearLabel.text = "\(movie.year)"
+        if let url = URL(string: movie.thumbnail) {
+            thumbnailImageView.load(url: url, placeholder: nil)
+        }
     }
 
 }

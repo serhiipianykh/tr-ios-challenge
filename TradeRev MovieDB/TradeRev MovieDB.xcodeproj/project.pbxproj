@@ -22,6 +22,7 @@
 		F2BFB75C258A699B00EA2448 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFB75A258A699B00EA2448 /* MovieCollectionViewCell.swift */; };
 		F2BFB75D258A699B00EA2448 /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2BFB75B258A699B00EA2448 /* MovieCollectionViewCell.xib */; };
 		F2BFB762258A75BC00EA2448 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFB761258A75BC00EA2448 /* CardView.swift */; };
+		F2BFB768258A778700EA2448 /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFB767258A778700EA2448 /* UIImageView+Cache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		F2BFB75A258A699B00EA2448 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		F2BFB75B258A699B00EA2448 /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
 		F2BFB761258A75BC00EA2448 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		F2BFB767258A778700EA2448 /* UIImageView+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		F2582121258A5AC400B0C68D /* TradeRev MovieDB */ = {
 			isa = PBXGroup;
 			children = (
+				F2BFB766258A776900EA2448 /* Extensions */,
 				F2582169258A62BD00B0C68D /* App */,
 				F2582155258A5B2B00B0C68D /* Models */,
 				F258216F258A636100B0C68D /* Controllers */,
@@ -193,6 +196,14 @@
 				F2BFB761258A75BC00EA2448 /* CardView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F2BFB766258A776900EA2448 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F2BFB767258A778700EA2448 /* UIImageView+Cache.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +345,7 @@
 				F2582125258A5AC400B0C68D /* SceneDelegate.swift in Sources */,
 				F2BFB762258A75BC00EA2448 /* CardView.swift in Sources */,
 				F2BFB754258A671600EA2448 /* MoviesViewController.swift in Sources */,
+				F2BFB768258A778700EA2448 /* UIImageView+Cache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

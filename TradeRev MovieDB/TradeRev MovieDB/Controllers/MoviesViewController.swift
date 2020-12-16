@@ -31,7 +31,7 @@ extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath) as? MovieCollectionViewCell else { return UICollectionViewCell() }
-        cell.configureCellWith(Movie(id: 1, name: "Fight Club", thumbnail: "", year: 1999))
+        cell.configureCellWith(Movie(id: 1, name: "Fight Club", thumbnail: "https://upload.wikimedia.org/wikipedia/en/f/fc/Fight_Club_poster.jpg", year: 1999))
         return cell
     }
     
