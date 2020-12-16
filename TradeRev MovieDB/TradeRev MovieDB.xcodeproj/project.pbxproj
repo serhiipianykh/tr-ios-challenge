@@ -24,6 +24,8 @@
 		F2BFB762258A75BC00EA2448 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFB761258A75BC00EA2448 /* CardView.swift */; };
 		F2BFB768258A778700EA2448 /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFB767258A778700EA2448 /* UIImageView+Cache.swift */; };
 		F2BFB770258A7A6C00EA2448 /* RoundedTopImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFB76F258A7A6C00EA2448 /* RoundedTopImageView.swift */; };
+		F2BFB776258A7BB100EA2448 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFB774258A7BB100EA2448 /* MovieDetailsViewController.swift */; };
+		F2BFB777258A7BB100EA2448 /* MovieDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2BFB775258A7BB100EA2448 /* MovieDetailsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		F2BFB761258A75BC00EA2448 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F2BFB767258A778700EA2448 /* UIImageView+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
 		F2BFB76F258A7A6C00EA2448 /* RoundedTopImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTopImageView.swift; sourceTree = "<group>"; };
+		F2BFB774258A7BB100EA2448 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
+		F2BFB775258A7BB100EA2448 /* MovieDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,8 @@
 			children = (
 				F2BFB752258A671600EA2448 /* MoviesViewController.swift */,
 				F2BFB753258A671600EA2448 /* MoviesViewController.xib */,
+				F2BFB774258A7BB100EA2448 /* MovieDetailsViewController.swift */,
+				F2BFB775258A7BB100EA2448 /* MovieDetailsViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -316,6 +322,7 @@
 				F2BFB755258A671600EA2448 /* MoviesViewController.xib in Resources */,
 				F258212C258A5AC700B0C68D /* Assets.xcassets in Resources */,
 				F2BFB75D258A699B00EA2448 /* MovieCollectionViewCell.xib in Resources */,
+				F2BFB777258A7BB100EA2448 /* MovieDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +351,7 @@
 			files = (
 				F2582123258A5AC400B0C68D /* AppDelegate.swift in Sources */,
 				F2582157258A5B5400B0C68D /* Movies.swift in Sources */,
+				F2BFB776258A7BB100EA2448 /* MovieDetailsViewController.swift in Sources */,
 				F2BFB75C258A699B00EA2448 /* MovieCollectionViewCell.swift in Sources */,
 				F2582125258A5AC400B0C68D /* SceneDelegate.swift in Sources */,
 				F2BFB762258A75BC00EA2448 /* CardView.swift in Sources */,

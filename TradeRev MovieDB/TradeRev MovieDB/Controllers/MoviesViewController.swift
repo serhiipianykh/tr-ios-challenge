@@ -8,6 +8,8 @@
 import UIKit
 
 class MoviesViewController: UIViewController {
+    
+    private var movies = [Movie]()
 
     @IBOutlet weak var moviesCollectionView: UICollectionView!
     
@@ -21,18 +23,29 @@ class MoviesViewController: UIViewController {
         
         self.moviesCollectionView.delegate = self
         self.moviesCollectionView.dataSource = self
+        
+        //dummy data
+        movies.append(Movie(id: 1, name: "Fight Club", thumbnail: "https://upload.wikimedia.org/wikipedia/en/f/fc/Fight_Club_poster.jpg", year: 1999))
     }
 }
 
 extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MovieCollectionViewCell", for: indexPath) as? MovieCollectionViewCell else { return UICollectionViewCell() }
-        cell.configureCellWith(Movie(id: 1, name: "Fight Club", thumbnail: "https://upload.wikimedia.org/wikipedia/en/f/fc/Fight_Club_poster.jpg", year: 1999))
+        cell.configureCellWith(movies[indexPath.item])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailsVC = MovieDetailsViewController(nibName: "MovieDetailsViewController", bundle: nil)
+        let movie = movies[indexPath.item]
+        detailsVC.movieTitle = movie.name
+        detailsVC.movieId = movie.id
+        self.navigationController?.pushViewController(detailsVC, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
