@@ -10,10 +10,17 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        //Supporting iOS12 and under
+        window = UIWindow()
+        let navigationController = UINavigationController()
+        let moviesVC = MoviesViewController(nibName: "MoviesViewController", bundle: nil)
+        navigationController.pushViewController(moviesVC, animated: false)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
         return true
     }
 
