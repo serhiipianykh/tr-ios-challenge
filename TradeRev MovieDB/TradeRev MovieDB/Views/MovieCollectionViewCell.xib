@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BEN-Wb-Jor" customClass="CardView" customModule="TradeRev_MovieDB" customModuleProvider="target">
                         <rect key="frame" x="4" y="4" width="248" height="312"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YcE-7n-6uW">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YcE-7n-6uW" customClass="RounderTopImageView" customModule="TradeRev_MovieDB" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="248" height="248"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="YcE-7n-6uW" secondAttribute="height" multiplier="1:1" id="BML-ay-KgP"/>

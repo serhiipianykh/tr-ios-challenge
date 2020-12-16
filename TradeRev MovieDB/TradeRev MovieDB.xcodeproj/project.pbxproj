@@ -23,6 +23,7 @@
 		F2BFB75D258A699B00EA2448 /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2BFB75B258A699B00EA2448 /* MovieCollectionViewCell.xib */; };
 		F2BFB762258A75BC00EA2448 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFB761258A75BC00EA2448 /* CardView.swift */; };
 		F2BFB768258A778700EA2448 /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFB767258A778700EA2448 /* UIImageView+Cache.swift */; };
+		F2BFB770258A7A6C00EA2448 /* RoundedTopImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFB76F258A7A6C00EA2448 /* RoundedTopImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		F2BFB75B258A699B00EA2448 /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
 		F2BFB761258A75BC00EA2448 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F2BFB767258A778700EA2448 /* UIImageView+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
+		F2BFB76F258A7A6C00EA2448 /* RoundedTopImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTopImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				F2BFB75A258A699B00EA2448 /* MovieCollectionViewCell.swift */,
 				F2BFB75B258A699B00EA2448 /* MovieCollectionViewCell.xib */,
 				F2BFB761258A75BC00EA2448 /* CardView.swift */,
+				F2BFB76F258A7A6C00EA2448 /* RoundedTopImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				F2582125258A5AC400B0C68D /* SceneDelegate.swift in Sources */,
 				F2BFB762258A75BC00EA2448 /* CardView.swift in Sources */,
 				F2BFB754258A671600EA2448 /* MoviesViewController.swift in Sources */,
+				F2BFB770258A7A6C00EA2448 /* RoundedTopImageView.swift in Sources */,
 				F2BFB768258A778700EA2448 /* UIImageView+Cache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
