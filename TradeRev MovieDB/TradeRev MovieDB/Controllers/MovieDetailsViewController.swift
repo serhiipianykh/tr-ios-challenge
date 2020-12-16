@@ -82,6 +82,14 @@ extension MovieDetailsViewController: UICollectionViewDelegate, UICollectionView
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailsVC = MovieDetailsViewController(nibName: "MovieDetailsViewController", bundle: nil)
+        let movie = recommendedMovies[indexPath.item]
+        detailsVC.movieTitle = movie.name
+        detailsVC.movieId = movie.id
+        self.navigationController?.pushViewController(detailsVC, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 8.0
     }
