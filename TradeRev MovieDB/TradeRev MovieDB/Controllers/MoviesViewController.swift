@@ -9,9 +9,11 @@ import UIKit
 
 class MoviesViewController: UIViewController {
     
+    private let viewModel = MoviesViewModel()
     private var movies = [Movie]()
 
     @IBOutlet weak var moviesCollectionView: UICollectionView!
+    private var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +22,24 @@ class MoviesViewController: UIViewController {
         self.title = "Movies"
         
         self.moviesCollectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "MovieCollectionViewCell")
-        
         self.moviesCollectionView.delegate = self
         self.moviesCollectionView.dataSource = self
         
-        //dummy data
-        movies.append(Movie(id: 1, name: "Fight Club", thumbnail: "https://upload.wikimedia.org/wikipedia/en/f/fc/Fight_Club_poster.jpg", year: 1999))
+        self.refreshControl = UIRefreshControl()
+        refreshControl.tintColor = UIColor.black
+        refreshControl.addTarget(self, action: #selector(refreshMovies), for: .valueChanged)
+        self.moviesCollectionView.refreshControl = refreshControl
+        
+        self.viewModel.movies.bind { [weak self] (movies) in
+            guard let self = self else { return }
+            self.movies = movies
+            self.moviesCollectionView.refreshControl?.endRefreshing()
+            self.moviesCollectionView.reloadData()
+        }
+    }
+    
+    @objc private func refreshMovies() {
+        self.viewModel.getMovies()
     }
 }
 
