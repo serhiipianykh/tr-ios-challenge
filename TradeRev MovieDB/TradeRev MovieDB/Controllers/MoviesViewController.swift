@@ -9,11 +9,11 @@ import UIKit
 
 class MoviesViewController: UIViewController {
     
-    private let viewModel = MoviesViewModel()
-    private var movies = [Movie]()
-
     @IBOutlet weak var moviesCollectionView: UICollectionView!
     private var refreshControl: UIRefreshControl!
+    
+    private let viewModel = MoviesViewModel()
+    private var movies = [Movie]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,8 +71,8 @@ extension MoviesViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let flowayout = collectionViewLayout as? UICollectionViewFlowLayout
-        let space: CGFloat = (flowayout?.minimumInteritemSpacing ?? 0.0) + (flowayout?.sectionInset.left ?? 0.0) + (flowayout?.sectionInset.right ?? 0.0)
+        let flowLayout = collectionViewLayout as? UICollectionViewFlowLayout
+        let space: CGFloat = (flowLayout?.minimumInteritemSpacing ?? 0.0) + (flowLayout?.sectionInset.left ?? 0.0) + (flowLayout?.sectionInset.right ?? 0.0)
         let size:CGFloat = (collectionView.frame.size.width - space) / 2.0
         return CGSize(width: size, height: size + 60) // 60 would be a rough height of 2 labels, added to simplify this solution, otherwise could come up with custom flow layout for more accurate sizing
     }

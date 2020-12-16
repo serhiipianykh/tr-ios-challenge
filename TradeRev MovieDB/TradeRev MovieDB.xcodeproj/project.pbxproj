@@ -29,6 +29,7 @@
 		F2BFB78C258A847400EA2448 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFB78B258A847400EA2448 /* Box.swift */; };
 		F2BFB791258A853800EA2448 /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFB790258A853800EA2448 /* MoviesService.swift */; };
 		F2BFB796258A866600EA2448 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFB795258A866600EA2448 /* MoviesViewModel.swift */; };
+		F2BFB79B258A8B5500EA2448 /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BFB79A258A8B5500EA2448 /* MovieDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		F2BFB78B258A847400EA2448 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		F2BFB790258A853800EA2448 /* MoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
 		F2BFB795258A866600EA2448 /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MoviesViewModel.swift; path = ../../../../Downloads/MoviesViewModel.swift; sourceTree = "<group>"; };
+		F2BFB79A258A8B5500EA2448 /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				F2BFB795258A866600EA2448 /* MoviesViewModel.swift */,
+				F2BFB79A258A8B5500EA2448 /* MovieDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				F2BFB762258A75BC00EA2448 /* CardView.swift in Sources */,
 				F2BFB754258A671600EA2448 /* MoviesViewController.swift in Sources */,
 				F2BFB796258A866600EA2448 /* MoviesViewModel.swift in Sources */,
+				F2BFB79B258A8B5500EA2448 /* MovieDetailsViewModel.swift in Sources */,
 				F2BFB791258A853800EA2448 /* MoviesService.swift in Sources */,
 				F2BFB770258A7A6C00EA2448 /* RoundedTopImageView.swift in Sources */,
 				F2BFB768258A778700EA2448 /* UIImageView+Cache.swift in Sources */,

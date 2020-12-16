@@ -76,4 +76,84 @@ class MoviesService {
             }
           }.resume()
     }
+    
+    static func getMovieDetails(id: Int, completion: @escaping MoviesDataCompletion<MovieDetails>) {
+        let url = URL(string: "\(baseURL)\(details)/\(id).json")!
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            DispatchQueue.main.async {
+              guard error == nil else {
+                print("Failed request from Movies API: \(error!.localizedDescription)")
+                completion(nil, .failedRequest)
+                return
+              }
+              
+              guard let data = data else {
+                print("No data returned from Movies API")
+                completion(nil, .noData)
+                return
+              }
+              
+              guard let response = response as? HTTPURLResponse else {
+                print("Unable to process Movies API response")
+                completion(nil, .invalidResponse)
+                return
+              }
+              
+              guard response.statusCode == 200 else {
+                print("Failure response from Movies API: \(response.statusCode)")
+                completion(nil, .failedRequest)
+                return
+              }
+              
+              do {
+                let decoder = JSONDecoder()
+                let movie: MovieDetails = try decoder.decode(MovieDetails.self, from: data)
+                completion(movie, nil)
+              } catch {
+                print("Unable to decode Movies API response: \(error.localizedDescription)")
+                completion(nil, .invalidData)
+              }
+            }
+          }.resume()
+    }
+    
+    static func getRecommendedFor(_ id: Int, completion: @escaping MoviesDataCompletion<[Movie]>) {
+        let url = URL(string: "\(baseURL)\(recommended)/\(id).json")!
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            DispatchQueue.main.async {
+              guard error == nil else {
+                print("Failed request from Movies API: \(error!.localizedDescription)")
+                completion(nil, .failedRequest)
+                return
+              }
+              
+              guard let data = data else {
+                print("No data returned from Movies API")
+                completion(nil, .noData)
+                return
+              }
+              
+              guard let response = response as? HTTPURLResponse else {
+                print("Unable to process Movies API response")
+                completion(nil, .invalidResponse)
+                return
+              }
+              
+              guard response.statusCode == 200 else {
+                print("Failure response from Movies API: \(response.statusCode)")
+                completion(nil, .failedRequest)
+                return
+              }
+              
+              do {
+                let decoder = JSONDecoder()
+                let movies: MoviesData = try decoder.decode(MoviesData.self, from: data)
+                completion(movies.movies, nil)
+              } catch {
+                print("Unable to decode Movies API response: \(error.localizedDescription)")
+                completion(nil, .invalidData)
+              }
+            }
+          }.resume()
+    }
 }
