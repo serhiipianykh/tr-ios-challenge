@@ -17,6 +17,8 @@
 		F2582145258A5AC700B0C68D /* TradeRev_MovieDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2582144258A5AC700B0C68D /* TradeRev_MovieDBUITests.swift */; };
 		F2582157258A5B5400B0C68D /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2582156258A5B5400B0C68D /* Movies.swift */; };
 		F258215B258A5B5F00B0C68D /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2582156258A5B5400B0C68D /* Movies.swift */; };
+		F2582160258A5CAA00B0C68D /* MovieTest.json in Resources */ = {isa = PBXBuildFile; fileRef = F258215F258A5CAA00B0C68D /* MovieTest.json */; };
+		F2582165258A5CB900B0C68D /* MovieDetailsTest.json in Resources */ = {isa = PBXBuildFile; fileRef = F2582164258A5CB900B0C68D /* MovieDetailsTest.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		F2582144258A5AC700B0C68D /* TradeRev_MovieDBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeRev_MovieDBUITests.swift; sourceTree = "<group>"; };
 		F2582146258A5AC700B0C68D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2582156258A5B5400B0C68D /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
+		F258215F258A5CAA00B0C68D /* MovieTest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MovieTest.json; sourceTree = "<group>"; };
+		F2582164258A5CB900B0C68D /* MovieDetailsTest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MovieDetailsTest.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,8 @@
 			children = (
 				F2582139258A5AC700B0C68D /* TradeRev_MovieDBTests.swift */,
 				F258213B258A5AC700B0C68D /* Info.plist */,
+				F258215F258A5CAA00B0C68D /* MovieTest.json */,
+				F2582164258A5CB900B0C68D /* MovieDetailsTest.json */,
 			);
 			path = "TradeRev MovieDBTests";
 			sourceTree = "<group>";
@@ -253,6 +259,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2582160258A5CAA00B0C68D /* MovieTest.json in Resources */,
+				F2582165258A5CB900B0C68D /* MovieDetailsTest.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

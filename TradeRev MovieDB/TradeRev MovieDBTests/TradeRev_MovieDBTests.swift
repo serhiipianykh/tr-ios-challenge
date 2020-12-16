@@ -9,25 +9,76 @@ import XCTest
 @testable import TradeRev_MovieDB
 
 class TradeRev_MovieDBTests: XCTestCase {
+    
+    private static let dateFormatter: DateFormatter = {
+        var formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter
+    }()
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var jsonMovieData: Data!
+    var movie: Movie!
+    
+    var jsonDetailsData: Data!
+    var movieDetails: MovieDetails!
+
+    override func setUp() {
+        let bundle = Bundle(for: type(of: self))
+        let movieUrl = bundle.url(forResource: "MovieTest", withExtension: "json")!
+        jsonMovieData = try! Data(contentsOf: movieUrl)
+    
+        let movieDecoder = JSONDecoder()
+        movie = try! movieDecoder.decode(Movie.self, from: jsonMovieData)
+        
+        let detailsUrl = bundle.url(forResource: "MovieDetailsTest", withExtension: "json")!
+        jsonDetailsData = try! Data(contentsOf: detailsUrl)
+    
+        let detailsDecoder = JSONDecoder()
+        movieDetails = try! detailsDecoder.decode(MovieDetails.self, from: jsonDetailsData)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testDecodeId() throws {
+        XCTAssertEqual(movie.id, 123)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+      
+    func testDecodeName() throws {
+        XCTAssertEqual(movie.name, "Fight Club")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testDecodeYear() throws {
+        XCTAssertEqual(movie.year, 1999)
     }
-
+    
+    func testDecodeImage() throws {
+        XCTAssertEqual(movie.thumbnail, "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt0137523%2F&psig=AOvVaw2hpU5xJuixjfg8VgHORb8e&ust=1608209535124000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIC8hMPF0u0CFQAAAAAdAAAAABAD")
+    }
+    
+    func testDecodeDetailsId() throws {
+        XCTAssertEqual(movieDetails.id, 123)
+    }
+    
+    func testDecodeDetailsName() throws {
+        XCTAssertEqual(movieDetails.name, "Fight Club")
+    }
+    
+    func testDecodeDetailsDescription() throws {
+        XCTAssertEqual(movieDetails.description, "An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more.")
+    }
+    
+    func testDecodeNotesDescription() throws {
+        XCTAssertEqual(movieDetails.notes, "An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more.")
+    }
+    
+    func testDecodePictureDescription() throws {
+        XCTAssertEqual(movieDetails.picture, "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt0137523%2F&psig=AOvVaw2hpU5xJuixjfg8VgHORb8e&ust=1608209535124000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIC8hMPF0u0CFQAAAAAdAAAAABAD")
+    }
+    
+    func testDecodeReleaseDate() throws {
+        XCTAssertEqual(movieDetails.releaseDate, 940000898)
+    }
+    
+    func testDecodeReleaseDateConvert() throws {
+        let dateString = Self.dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval(movieDetails.releaseDate)))
+        XCTAssertEqual(dateString, "1999-10-15")
+    }
 }
